@@ -119,97 +119,80 @@ Send another Ping Request. Did it require new ARP Requests? (Y/N)
 ```
 
 ```
-
-
-
-
-
-
-
-
-
-
-
 Task 5
 Nmap Host Discovery Using ARP
 
+# Answer the questions below
+We will be sending broadcast ARP Requests packets with the following options:
 
+From computer1
+To computer1 (to indicate it is broadcast)
+Packet Type: “ARP Request”
+Data: try all the possible eight devices (other than computer1) in the network: computer2, computer3, computer4, computer5, computer6, switch1, switch2, and router.
 
+How many devices are you able to discover using ARP requests?
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 Task 6
 Nmap Host Discovery Using ICMP
 
+Answer the questions below
+What is the option required to tell Nmap to use ICMP Timestamp to discover live hosts?
+```
 
+```
+What is the option required to tell Nmap to use ICMP Address Mask to discover live hosts?
+```
 
+```
+What is the option required to tell Nmap to use ICMP Echo to discover live hosts?
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 Task 7
 Nmap Host Discovery Using TCP and UDP
 
 
+# Answer the questions below
+Which TCP ping scan does not require a privileged account?
+```
 
+```
+Which TCP ping scan requires a privileged account?
+```
 
+```
+What option do you need to add to Nmap to run a TCP SYN ping scan on the telnet port?
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 Task 8
 Using Reverse-DNS Lookup
 
+# Answer the questions below
+We want Nmap to issue a reverse DNS lookup for all the possibles hosts on a subnet, hoping to get some insights from the names. What option should we add?
+```
 
+```
 Task 9
 Summary
+You have learned how ARP, ICMP, TCP, and UDP can detect live hosts by completing this room. Any response from a host is an indication that it is online. Below is a quick summary of the command-line options for Nmap that we have covered.
+
+Scan Type	Example Command
+ARP Scan	sudo nmap -PR -sn MACHINE_IP/24
+ICMP Echo Scan	sudo nmap -PE -sn MACHINE_IP/24
+ICMP Timestamp Scan	sudo nmap -PP -sn MACHINE_IP/24
+ICMP Address Mask Scan	sudo nmap -PM -sn MACHINE_IP/24
+TCP SYN Ping Scan	sudo nmap -PS22,80,443 -sn MACHINE_IP/30
+TCP ACK Ping Scan	sudo nmap -PA22,80,443 -sn MACHINE_IP/30
+UDP Ping Scan	sudo nmap -PU53,161,162 -sn MACHINE_IP/30
+
+Remember to add -sn if you are only interested in host discovery without port-scanning. Omitting -sn will let Nmap default to port-scanning the live hosts.
+
+Option	Purpose
+-n	no DNS lookup
+-R	reverse-DNS lookup for all hosts
+-sn	host discovery only
+
+
