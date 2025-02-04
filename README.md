@@ -81,10 +81,44 @@ UDP from Transport Layer
 
  ARP has one purpose: sending a frame to the broadcast address on the network segment and asking the computer with a specific IP address to respond by providing its MAC (hardware) address.
 
+# question
+Send a packet with the following:
+
+From computer1
+To computer3
+Packet Type: “Ping Request”
  
+What is the type of packet that computer1 sent before the ping?
+```
 
+```
+What is the type of packet that computer1 received before being able to send the ping?
+```
 
+```
+How many computers responded to the ping request?
+```
 
+```
+
+Send a packet with the following:
+
+From computer2
+To computer5
+Packet Type: “Ping Request”
+
+What is the name of the first device that responded to the first ARP Request?
+```
+
+```
+What is the name of the first device that responded to the second ARP Request?
+```
+
+```
+Send another Ping Request. Did it require new ARP Requests? (Y/N)
+```
+
+```
 
 
 
