@@ -31,32 +31,57 @@ Suppose you are connected to a subnet different from the subnet of the target sy
 # question 
 How many devices can see the ARP Request?
 ```
+4
 ```
 Did computer6 receive the ARP Request? (Y/N)
 ```
+N
 ```
 
-
-
-
-
-
+How many devices can see the ARP Request?
+```
+4
+```
+Did computer6 reply to the ARP Request? (Y/N)
+```
+Y
+```
 
 Task 3
 Enumerating Targets
+you can provide a list, a range, or a subnet. Examples of target specification are:
 
+- list: MACHINE_IP scanme.nmap.org example.com will scan 3 IP addresses.
+- range: 10.11.12.15-20 will scan 6 IP addresses: 10.11.12.15, 10.11.12.16,… and 10.11.12.20.
+- subnet: MACHINE_IP/30 will scan 4 IP addresses.
 
+You can also provide a file as input for your list of targets, ```nmap -iL list_of_hosts.txt.```
 
+If you want to check the list of hosts that Nmap will scan, you can use ```nmap -sL``` TARGETS. This option will give you a detailed list of the hosts that Nmap will scan without scanning them;
+however, Nmap will attempt a reverse-DNS resolution on all the targets to obtain their names. Names might reveal various information to the pentester. (If you don’t want Nmap to the DNS server, you can add -n.)
 
-
-
+# Qustion's
+What is the first IP address Nmap would scan if you provided 10.10.12.13/29 as your target?
+```
+10.10.12.8
+```
+How many IP addresses will Nmap scan if you provide the following range 10.10.0-255.101-125? 
+```
+6400
+```
 Task 4
 Discovering Live Hosts
 
+ARP from Link Layer
+ICMP from Network Layer
+TCP from Transport Layer
+UDP from Transport Layer
 
+![745e0412b319d324352c7b29863b74f4](https://github.com/user-attachments/assets/4e35b967-854e-410e-a610-4d99fdedf2c0)
 
+ ARP has one purpose: sending a frame to the broadcast address on the network segment and asking the computer with a specific IP address to respond by providing its MAC (hardware) address.
 
-
+ 
 
 
 
