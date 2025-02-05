@@ -10,7 +10,7 @@ We also introduce two scanners, arp-scan and masscan, and explain how they overl
 ![f1b4ede255e008646e425038d709c9b6](https://github.com/user-attachments/assets/a6de79fe-af61-445c-b1ac-d1f590d9b143)
 
 
-Task 2
+# Task 2
 Subnetworks
 
 A network segment is a group of computers connected using a shared medium. For instance, the medium can be the Ethernet switch or WiFi access point.
@@ -28,7 +28,7 @@ Suppose you are connected to a subnet different from the subnet of the target sy
 - This means that while your scanner can send packets to the target systems on a different subnet, it won't be able to perform ARP queries to resolve the MAC addresses of those systems. Instead, 
 - the router will handle the ARP resolution for the target subnet and forward the packets accordingly.
 
-# question 
+## question 
 How many devices can see the ARP Request?
 ```
 4
@@ -47,7 +47,7 @@ Did computer6 reply to the ARP Request? (Y/N)
 Y
 ```
 
-Task 3
+# Task 3
 Enumerating Targets
 you can provide a list, a range, or a subnet. Examples of target specification are:
 
@@ -60,7 +60,7 @@ You can also provide a file as input for your list of targets, ```nmap -iL list_
 If you want to check the list of hosts that Nmap will scan, you can use ```nmap -sL``` TARGETS. This option will give you a detailed list of the hosts that Nmap will scan without scanning them;
 however, Nmap will attempt a reverse-DNS resolution on all the targets to obtain their names. Names might reveal various information to the pentester. (If you don’t want Nmap to the DNS server, you can add -n.)
 
-# Qustion's
+## Qustion's
 What is the first IP address Nmap would scan if you provided 10.10.12.13/29 as your target?
 ```
 10.10.12.8
@@ -69,7 +69,7 @@ How many IP addresses will Nmap scan if you provide the following range 10.10.0-
 ```
 6400
 ```
-Task 4
+# Task 4
 Discovering Live Hosts
 
 ARP from Link Layer
@@ -81,7 +81,7 @@ UDP from Transport Layer
 
  ARP has one purpose: sending a frame to the broadcast address on the network segment and asking the computer with a specific IP address to respond by providing its MAC (hardware) address.
 
-# question
+## question
 Send a packet with the following:
 
 From computer1
@@ -119,10 +119,12 @@ Send another Ping Request. Did it require new ARP Requests? (Y/N)
 ```
 
 ```
-Task 5
+# Task 5
 Nmap Host Discovery Using ARP
 
-# Answer the questions below
+
+
+### Answer the questions below
 We will be sending broadcast ARP Requests packets with the following options:
 
 From computer1
@@ -134,7 +136,7 @@ How many devices are you able to discover using ARP requests?
 ```
 
 ```
-Task 6
+# Task 6
 Nmap Host Discovery Using ICMP
 
 Answer the questions below
@@ -150,7 +152,7 @@ What is the option required to tell Nmap to use ICMP Echo to discover live hosts
 ```
 
 ```
-Task 7
+# Task 7
 Nmap Host Discovery Using TCP and UDP
 
 
@@ -167,7 +169,7 @@ What option do you need to add to Nmap to run a TCP SYN ping scan on the telnet 
 ```
 
 ```
-Task 8
+# Task 8
 Using Reverse-DNS Lookup
 
 # Answer the questions below
@@ -175,7 +177,7 @@ We want Nmap to issue a reverse DNS lookup for all the possibles hosts on a subn
 ```
 
 ```
-Task 9
+# Task 9
 Summary
 You have learned how ARP, ICMP, TCP, and UDP can detect live hosts by completing this room. Any response from a host is an indication that it is online. Below is a quick summary of the command-line options for Nmap that we have covered.
 
